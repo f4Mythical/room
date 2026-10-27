@@ -23,5 +23,6 @@ public interface GraDAO {
     @Query("SELECT * from gry")
     public List<Gra> zwrocWszystkieGry();
 
-    @Query()
+    @Query("SELECT nazwa from gry where minLiczba = :ile")
+    public List<String> zwrocNazwyGierDlaLiczbyOsob(int ile);
 }
